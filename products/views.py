@@ -1,9 +1,12 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from .models import Pizza
 
 
 def index(request):
-    return HttpResponse('Index Products')
+    pizzas = Pizza.objects.all()
+    return render(request, 'index.html',
+                  {'pizzas': pizzas})
 
 
 def new(request):
