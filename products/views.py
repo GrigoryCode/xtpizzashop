@@ -3,4 +3,9 @@ from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse('Hello Pizza')
+    return HttpResponse('Index Products')
+
+
+def new(request):
+    return HttpResponse('New Products')
+
