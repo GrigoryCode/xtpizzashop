@@ -1,9 +1,13 @@
-  <h1>Index Page</h1>
-    <ul>
-        {% for pizza in pizzas %}
-          <li>
-              {{ pizza.title }}<br>
-              ${{ pizza.price }}
-          </li>
-        {% endfor %}
-    </ul>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Index Page</h1>
+      <ul>
+          {% for pizza in pizzas %}
+            <li>
+                {{ pizza.title }}<br>
+                ${{ pizza.price }}
+            </li>
+          {% endfor %}
+      </ul>
+{% endblock %}
