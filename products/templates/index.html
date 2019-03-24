@@ -3,15 +3,17 @@
 {% block content %}
 <div class="container">
     <h1>Index Page</h1>
-    <div class="row">
+    <div class="row text-center">
         {% for pizza in pizzas %}
-        <div class="col">
-            <div class="card" style="width: 18rem;">
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100">
                 <img src="{{ pizza.image_url }}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{ pizza.title }}</h5>
                     <p class="card-text">{{ pizza.description }}</p>
                     <p class="card-text">{{ pizza.price }}</p>
+                </div>
+                <div class="card-footer">
                     <a href="#" class="btn btn-primary">Add to Card</a>
                 </div>
             </div>
