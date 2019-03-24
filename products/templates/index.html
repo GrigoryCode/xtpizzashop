@@ -1,13 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="container">
     <h1>Index Page</h1>
-      <ul>
-          {% for pizza in pizzas %}
-            <li>
-                {{ pizza.title }}<br>
-                ${{ pizza.price }}
-            </li>
-          {% endfor %}
-      </ul>
+    <div class="row">
+        {% for pizza in pizzas %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ pizza.image_url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ pizza.title }}</h5>
+                    <p class="card-text">{{ pizza.description }}</p>
+                    <p class="card-text">{{ pizza.price }}</p>
+                    <a href="#" class="btn btn-primary">Add to Card</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
