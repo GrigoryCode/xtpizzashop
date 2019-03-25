@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Pizza
+from .models import Pizza, CartItem, Cart
 
 
 def index(request):

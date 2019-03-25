@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Pizza
+from .models import Pizza, CartItem, Cart
 
 
 class PizzaAdmin(admin.ModelAdmin):
@@ -7,3 +7,5 @@ class PizzaAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Pizza, PizzaAdmin)
+admin.site.register(CartItem)
+admin.site.register(Cart)
