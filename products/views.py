@@ -4,11 +4,19 @@ from .models import Pizza, CartItem, Cart
 
 
 def index(request):
-    pizzas = Pizza.objects.all()
+    cart = Cart.objects.first()
+    pizzas = Pizza.objects.all()[0:4]
     return render(request, 'index.html',
-                  {'pizzas': pizzas})
+                  {'pizzas': pizzas, 'cart': cart})
 
 
 def new(request):
     return HttpResponse('New Products')
 
+
+def cart(request):
+    cart = Cart.objects.first()
+    context = {
+        'cart': cart
+    }
+    return render(request, 'cart.html', context)
